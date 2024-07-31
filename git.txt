@@ -1,0 +1,19 @@
+git remote rm origin
+git remote add origin git@github.com:username/myapp.git
+
+
+git init
+git add -A
+git commit -m "java commit"
+git branch -M master
+git remote add origin https://github.com/UniqTechnologiesCodeRepository/SessionTracking.git
+git push -u origin master
+
+
+
+git fetch origin master
+git merge origin master
+
+git fetch origin master:tmp
+git rebase tmp
+git push origin HEAD:master

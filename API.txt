@@ -1,0 +1,59 @@
+
+Use HTTP Methods Appropriately:
+
+GET: Retrieve data. (Read)
+POST: Create new resources.
+PUT: Update existing resources.(If the record exists, update else, create a new record)
+DELETE: Remove resources.
+PATCH: Partially update resources.
+
+POST is always for creating a resource ( does not matter if it was duplicated )
+PUT is for checking if resource exists then update, else create new resource
+PATCH is always for updating a resource
+
+
+What is Idempotent:
+
+Idempotent operations produce the same result even when the operation is repeated many times. The result of the 2nd, 3rd, and 1,000th repeat of the operation will return exactly the same result as the 1st time.
+
+Idempotent methods:
+GET
+PUT
+DELETE
+
+
+Non-idempotent methods:
+POST
+PATCH
+
+
+Use Meaningful Resource URIs:
+
+Use nouns for resource names and avoid verbs.
+Structure URIs hierarchically to represent relationships.
+Example: /users/{userId}/orders/{orderId}.
+
+Use Consistent Naming Conventions:
+
+Stick to a consistent naming scheme, such as camelCase, snake_case
+Example: /products/{productId}/reviews instead of /products/{product_id}/reviews.
+
+
+Provide Appropriate Status Codes:
+
+200 OK: Success for GET, PUT, PATCH, DELETE.
+201 Created: Successfully created a resource with POST.
+204 No Content: Success with no content to return.
+400 Bad Request: Invalid client request.
+401 Unauthorized: Authentication is required.
+404 Not Found: Resource not found.
+500 Internal Server Error: Server error.
+
+Support Filtering, Sorting, and Pagination:
+
+Use query parameters for filtering (?status=active), sorting (?sort=createdAt), and pagination (?page=2&limit=50).
+
+Version Your API:
+
+Use versioning to manage changes and backward compatibility.
+Example: /v1/users or through headers.
